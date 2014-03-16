@@ -1,0 +1,6 @@
+.DS_Store
+.Spotlight-V100
+.Trashes
+.vagrant
+packer_cache/*
+*.box

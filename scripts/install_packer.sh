@@ -1,33 +1,28 @@
 #!/bin/bash
+
+# Exit when any of these commands fail
 set -e
 
+# Request sudo password upfront
 sudo -v
 
-function install () {
-    version=$1
-    platform=$2
-
-    curl -L -o "/tmp/packer-${version}" --url "https://dl.bintray.com/mitchellh/packer/${version}_${platform}_amd64.zip"
+# Install Packer
+install_packer () {
     sudo mkdir -p /usr/local/packer
-    sudo unzip -o "/tmp/packer-${version}" -d /usr/local/packer
-    rm -rf "/tmp/packer-${version}"
+    if [ ! -f /usr/local/packer/packer ]; then
+        curl -L -o "/tmp/packer-${1}.zip" --url "https://dl.bintray.com/mitchellh/packer/${1}_${2}_amd64.zip"
+        sudo unzip "/tmp/packer-${1}.zip" -d /usr/local/packer
+    fi
 }
 
-function is_installed () {
-    type "${1}" >/dev/null 2>&1 || { echo >&2 "'${1}' is require and not installed. Aborting."; exit 1; }
-}
-
-function main () {
-    is_installed "curl"
-    is_installed "unzip"
-
-    if [[ $OSTYPE == "darwin"* ]]; then
-        install "0.5.2" "darwin"
-    elif [[ $OSTYPE == "linux"* ]]; then
-        install "0.5.2" "linux"
+main () {
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        install_packer "0.5.2" "darwin"
+    elif [[ "$OSTYPE" == "linux"* ]]; then
+        install_packer "0.5.2" "linux"
     else
-        echo "Unsupported OS. Aborting"
-        exit 2
+        echo "Unsupported OS: $OSTYPE"
+        exit 1
     fi
 }
 
