@@ -3,7 +3,8 @@
     "iso_url": "http://releases.ubuntu.com/releases/saucy/ubuntu-13.10-server-amd64.iso",
     "iso_checksum": "4d1a8b720cdd14b76ed9410c63a00d0e",
     "iso_checksum_type": "md5",
-    "headless": true
+    "headless": true,
+    "build_number": 1
   },
   "builders": [
     {
@@ -105,11 +106,11 @@
     {
       "type": "vagrant",
       "only": ["virtualbox"],
-      "output": "saucy64-1.box"
+      "output": "saucy64-{{user `build_number`}}.box"
     }, {
       "type": "vagrant",
       "only": ["vmware"],
-      "output": "saucy64-1_vmware.box"
+      "output": "saucy64-{{user `build_number`}}_vmware.box"
     }
   ]
 }

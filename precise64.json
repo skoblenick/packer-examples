@@ -3,7 +3,8 @@
     "iso_url": "http://releases.ubuntu.com/releases/precise/ubuntu-12.04.4-server-amd64.iso",
     "iso_checksum": "e83adb9af4ec0a039e6a5c6e145a34de",
     "iso_checksum_type": "md5",
-    "headless": true
+    "headless": true,
+    "build_number": 1
   },
   "builders": [
     {
@@ -104,11 +105,11 @@
     {
       "type": "vagrant",
       "only": ["virtualbox"],
-      "output": "precise64-1.box"
+      "output": "precise64-{{user `build_number`}}.box"
     }, {
       "type": "vagrant",
       "only": ["vmware"],
-      "output": "precise64-1_vmware.box"
+      "output": "precise64-{{user `build_number`}}_vmware.box"
     }
   ]
 }
