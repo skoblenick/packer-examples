@@ -8,6 +8,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder ".", "/vagrant", type: "rsync",
     rsync__exclude: [".git/", "packer_cache/", "*.box"]
 
+  config.vm.define "trusty64", primary: true do |ubuntu|
+    ubuntu.vm.box = "trusty64"
+    ubuntu.vm.box_url = "trusty64-1.box"
+
+    ubuntu.vm.provider "vmware_fusion" do |v, override|
+      v.gui = false
+      override.vm.box_url = "trusty64-1_vmware.box"
+    end
+  end
+
   config.vm.define "saucy64", primary: true do |ubuntu|
     ubuntu.vm.box = "saucy64"
     ubuntu.vm.box_url = "saucy64-1.box"
