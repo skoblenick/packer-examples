@@ -3,4 +3,5 @@
 .Trashes
 .vagrant
 packer_cache/*
+output-*/*
 *.box
