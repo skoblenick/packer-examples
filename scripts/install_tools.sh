@@ -21,13 +21,19 @@ virtualbox () {
 
 vmware () {
     # Install VMware Tools
-    curl -L -o /tmp/vmware.tools.linux.zip.tar --url https://softwareupdate.vmware.com/cds/vmw-desktop/fusion/6.0.2/1398658/packages/com.vmware.fusion.tools.linux.zip.tar
-    unzip /tmp/vmware.tools.linux.zip.tar -d /tmp
+    url="https://softwareupdate.vmware.com/cds/vmw-desktop/fusion/6.0.3/1747349/packages/com.vmware.fusion.tools.linux.zip.tar"
+    curl -L -o /tmp/com.vmware.fusion.tools.linux.zip.tar --url "${url}"
+    tar -xvf /tmp/com.vmware.fusion.tools.linux.zip.tar -C /tmp
+    rm -f /tmp/com.vmware.fusion.tools.linux.zip.tar
+
+    unzip /tmp/com.vmware.fusion.tools.linux.zip -d /tmp
+    rm -f /tmp/com.vmware.fusion.tools.linux.zip
+
     sudo mount -o loop /tmp/payload/linux.iso /media/cdrom
-    tar -xzvf /media/cdrom/VMwareTools-9.6.1-1378637.tar.gz -C /tmp
+    tar -xzvf /media/cdrom/VMwareTools-9.6.2-1688356.tar.gz -C /tmp
     sudo /tmp/vmware-tools-distrib/vmware-install.pl --default
     umount /media/cdrom
-    rm -f /tmp/vmware.tools.linux.zip.tar
+
     rm -rf /tmp/payload
 }
 
