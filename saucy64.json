@@ -4,6 +4,7 @@
     "iso_checksum": "4d1a8b720cdd14b76ed9410c63a00d0e",
     "iso_checksum_type": "md5",
     "headless": true,
+    "version": "1.0.0",
     "build_number": 1
   },
   "builders": [
@@ -106,11 +107,11 @@
     {
       "type": "vagrant",
       "only": ["virtualbox"],
-      "output": "saucy64-{{user `build_number`}}.box"
+      "output": "saucy64-{{user `version`}}-{{user `build_number`}}.box"
     }, {
       "type": "vagrant",
       "only": ["vmware"],
-      "output": "saucy64-{{user `build_number`}}_vmware.box"
+      "output": "saucy64-{{user `version`}}-{{user `build_number`}}_vmware.box"
     }
   ]
 }
