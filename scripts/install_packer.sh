@@ -1,7 +1,4 @@
-#!/bin/bash
-
-# Exit when any of these commands fail
-set -e
+#!/bin/bash -ex
 
 # Request sudo password upfront
 sudo -v
