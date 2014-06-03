@@ -17,9 +17,9 @@ install_packer () {
 
 main () {
     if [[ "$OSTYPE" == "darwin"* ]]; then
-        install_packer "0.5.2" "darwin"
+        install_packer "0.6.0" "darwin"
     elif [[ "$OSTYPE" == "linux"* ]]; then
-        install_packer "0.5.2" "linux"
+        install_packer "0.6.0" "linux"
     else
         echo "Unsupported OS: $OSTYPE"
         exit 1
