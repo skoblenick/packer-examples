@@ -18,19 +18,19 @@ Using Packer
 ------------
 
 ```
-/usr/local/packer/packer build <precise64|raring64|saucy64>.json
+/usr/local/packer/packer build <precise64|raring64|saucy64|trusty64>.json
 ```
 
 Building for only VirtualBox
 
 ```
-/usr/local/packer/packer build -only=virtualbox <precise64|raring64|saucy64>.json
+/usr/local/packer/packer build -only=virtualbox <precise64|raring64|saucy64|trusty64>.json
 ```
 
 Building for only VMware
 
 ```
-/usr/local/packer/packer build -only=vmware <precise64|raring64|saucy64>.json
+/usr/local/packer/packer build -only=vmware <precise64|raring64|saucy64|trusty64>.json
 ```
 
 
@@ -38,10 +38,10 @@ Starting the base box using Vagrant
 -----------------------------------
 
 ### With VirtualBox
-vagrant up <precise64|raring64|saucy64>
+vagrant up <precise64|raring64|saucy64|trusty64>
 
 ### With VMware Fusion
-vagrant up <precise64|raring64|saucy64> --provider=vmware_fusion
+vagrant up <precise64|raring64|saucy64|trusty64> --provider=vmware_fusion
 
 Cleaning Up
 -----------
