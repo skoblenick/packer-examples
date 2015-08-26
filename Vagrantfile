@@ -18,7 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 
-  config.vm.define "saucy64", primary: true do |ubuntu|
+  config.vm.define "saucy64" do |ubuntu|
     ubuntu.vm.box = "saucy64"
     ubuntu.vm.box_url = "saucy64-1.box"
 
