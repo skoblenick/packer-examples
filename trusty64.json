@@ -3,9 +3,9 @@
     "iso_url": "http://releases.ubuntu.com/releases/trusty/ubuntu-14.04-server-amd64.iso",
     "iso_checksum": "01545fa976c8367b4f0d59169ac4866c",
     "iso_checksum_type": "md5",
-    "headless": true,
+    "headless": "true",
     "version": "1.0.0",
-    "build_number": 1
+    "build_number": "1"
   },
   "builders": [
     {

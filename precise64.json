@@ -3,9 +3,9 @@
     "iso_url": "http://releases.ubuntu.com/releases/precise/ubuntu-12.04.4-server-amd64.iso",
     "iso_checksum": "e83adb9af4ec0a039e6a5c6e145a34de",
     "iso_checksum_type": "md5",
-    "headless": true,
+    "headless": "true",
     "version": "1.0.0",
-    "build_number": 1
+    "build_number": "1"
   },
   "builders": [
     {
