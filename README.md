@@ -2,6 +2,15 @@
 
 Showcase of examples demonstrating building Ubuntu base boxes with Packer.
 
+## Prerequisites
+
+These examples have been tested on Mac OS X. The following packages should be installed:
+
+- VirtualBox
+- VMware Fusion
+- Packer >= 0.8.6
+- Vagrant >= 1.7.4
+
 ## Installing Packer
 
 To install Packer 0.8.6, open Terminal and run:
@@ -35,10 +44,16 @@ Building for only VMware:
 ## Starting the base box using Vagrant
 
 ### With VirtualBox
+
+```
 vagrant up <precise64|raring64|saucy64|trusty64>
+```
 
 ### With VMware Fusion
+
+```
 vagrant up <precise64|raring64|saucy64|trusty64> --provider=vmware_fusion
+```
 
 ## Cleaning Up
 
